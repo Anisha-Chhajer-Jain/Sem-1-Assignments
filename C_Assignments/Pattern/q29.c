@@ -11,17 +11,13 @@ int main() {
             else
             printf(" ");
         }
-        for(int j=0;j<i;j++)
-        {
+        for(int j=0;j<i;j++){
             printf("*");
         }
         printf("\n");
-    }
-                                                                    
-    
+    }                                                              
     for (int i = 0; i < n; i++) {
-        for(int j=0;j<n;j++)
-        {
+        for(int j=0;j<n;j++) {
             if(j-i>=0)
             printf("*");
             else
