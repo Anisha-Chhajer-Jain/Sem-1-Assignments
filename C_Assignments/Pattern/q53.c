@@ -2,6 +2,7 @@
 int main()
 {
     int n;
+    printf("Enter a no.");
     scanf("%d",&n);
     int k = 1;
     for(int i=1;i<=n;i++){
