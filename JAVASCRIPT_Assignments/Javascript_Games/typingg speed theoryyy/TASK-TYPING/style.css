@@ -1,0 +1,386 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stat-box h3 {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.stat-box div {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.text-display {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    min-height: 150px;
+    cursor: not-allowed;
+}
+
+.text-display .correct {
+    color: green;
+    background-color: #8bf7f0;
+}
+
+.text-display .incorrect {
+    color: red;
+    background: #ffcccc;
+}
+
+.text-display .current {
+    background: #667eea;
+    color: white;
+}
+
+#typingArea {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.2em;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    resize: vertical;
+    min-height: 150px;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 15px;
+}
+
+#typingArea:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+.start-btn, .reset-btn, .pause-btn {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+
+.start-btn {
+    background: #4ECDC4;
+    color: white;
+}
+
+.start-btn:hover {
+    background: #45b8b0;
+    transform: translateY(-2px);
+}
+
+.start-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.reset-btn {
+    background: #ff6b6b;
+    color: white;
+}
+
+.reset-btn:hover {
+    background: #ee5a5a;
+}
+.pause-btn {
+    background: #82a925;
+    color: white;
+}
+
+.pause-btn:hover {
+    background: #9ed128;
+}
+.btn{
+    background-color: #91a0e6;
+}
+@media (max-width: 768px) {
+    .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.time-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #764ba2;
+    transform: translateY(-2px);
+}
+
+.btn.active {
+    background: #5a67d8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #e9ecef;
+}
+
+.stat-box h3 {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.stat-box div {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* New feature styles */
+.last-test, .fast-start {
+    text-align: center;
+    margin: 10px 0;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.keep-typing {
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+    margin: 10px 0;
+    display: none;
+}
+
+.text-display {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    line-height: 1.6;
+    border: 2px solid #e9ecef;
+    min-height: 120px;
+}
+
+#typingArea {
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1.1em;
+    resize: none;
+    margin-bottom: 20px;
+    font-family: inherit;
+}
+
+#typingArea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#typingArea.correct {
+    border-color: #28a745;
+}
+
+#typingArea.incorrect {
+    border-color: #dc3545;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.start-btn, .reset-btn, .pause-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.start-btn {
+    background: #28a745;
+    color: white;
+}
+
+.start-btn:hover {
+    background: #218838;
+}
+
+.reset-btn {
+    background: #ffc107;
+    color: black;
+}
+
+.reset-btn:hover {
+    background: #e0a800;
+}
+
+.pause-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.pause-btn:hover {
+    background: #545b62;
+}
+
+/* Character highlighting */
+.correct-char {
+    color: #28a745;
+}
+
+.incorrect-char {
+    color: #dc3545;
+    background: #ffe6e6;
+}
+
+.current-char {
+    background: #b3d4fc;
+    border-radius: 2px;
+}
+
+/* Feature-specific styles */
+#wpm.bold {
+    font-weight: bold;
+}
+
+#accuracy.green {
+    color: #28a745;
+}
+
+#bestWPM.highlight {
+    color: red;
+    font-weight: bold;
+}
+
+#timer.warning {
+    color: red;
+    font-size: 2.2em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .control-buttons {
+        flex-direction: column;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+}
