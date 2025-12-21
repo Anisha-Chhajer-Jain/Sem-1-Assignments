@@ -1,0 +1,117 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <video autoplay loop>
+        <source src="">
+    </video>
+    <div class="container">
+        <h1>Click Counter Game</h1>
+        <p class="subtitle">Click as fast as you can</p>
+
+        Score Display Section 
+        <div class="score-section">
+            <div class="score-box">
+                <h2>Current Score</h2>
+                <div id="currentScore" class="score">0</div>
+            </div>
+            <div class="score-box">
+                <h2>High Score</h2>
+                <div id="highScore" class="score">0</div>
+            </div>
+        </div>
+
+    
+        <div class="timer-section">
+            <h2>Time Remaining</h2>
+            <div id="timer" class="timer">10</div>
+        </div>
+
+        <div class="button-section">
+            <button id="clickButton" class="click-btn" disabled>
+                Click Me!
+            </button>
+            <button id="startButton" class="start-btn">
+                Start Game
+            </button>
+            <button id="resetButton" class="reset-btn">
+                Reset High Score
+            </button>
+            <div class="new">
+             <button id="pauseButton" class="pause-btn">
+                Pause
+            </button>
+            <button id="resumeButton" class="resume-btn" disabled>
+                Resume
+            </button>
+            </div>
+
+        </div>
+
+       
+        <div id="statusMessage" class="status-message">
+            Click "Start Game" to begin!
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Click Counter</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <video id="video" autoplay loop>
+      <source src="https://cdn.pixabay.com/video/2020/02/25/32826-394513840_tiny.mp4">
+    </video>
+    <div class="container">
+      <h1>Click Counter Game</h1>
+      <p class="subtitle">Click as fast as you can!</p>
+
+      <div class="score-section">
+        <div class="score-box">
+          <h2>Current Score</h2>
+          <div id="currentscore" class="score">0</div>
+        </div>
+        <div class="score-box">
+          <h2>High Score</h2>
+          <div id="highscore" class="score">0</div>
+        </div>
+      </div>
+
+      <div class="timer-section">
+        <h2>Time Remaining</h2>
+        <div id="timer" class="timer">10</div>
+      </div>
+
+      <div class="button-section">
+        
+        <button id="clickButton" class="click-btn" disabled>Click Me!</button>
+        <button id="startButton" class="start-btn">Start Game</button>
+        <button id="resetButton" class="reset-btn">Reset High Score</button>
+        <div class="together">
+          <button id="pauseButton" class="pause-btn">Pause</button>
+        <button id="resumeButton" class="resume-btn">Resume</button>
+</div>
+      </div>
+
+      <div id="statusMessage" class="status-message">
+        Click "Start Game" to begin!
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html> 
